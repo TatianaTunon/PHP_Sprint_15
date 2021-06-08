@@ -22,7 +22,10 @@ use App\Http\Controllers\crapcontroller;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('login', [AuthController::class, 'login'])->name('auth.login');
+//Route::post('login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('login', function() {
+    dd(":)");
+})->name('auth.login');
 
 
 Route::middleware('jwt.auth')->group(function() {  
